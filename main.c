@@ -10,11 +10,25 @@ int op;
 
 void cadastro(); //protótipo da função
 void pesquisa();
+void lista();
 
 int main (void){
     cadastro();
-    pesquisa();
+    //pesquisa();
+    lista();
 
+}
+void lista(){
+    int i;
+    for (i=0;i<SIZE;i++) {
+        if(cpf[i] > 0){ // if para mostrar somente os cadastros realizados
+            printf("\nNome: %s\nEmail: %s\nCPF: %d", nome[i], email[i], cpf[i]);
+
+        }else{
+            break;
+        }
+
+    }
 }
 void cadastro(){
     static int linha;
