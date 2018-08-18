@@ -1,5 +1,7 @@
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
+
 #define SIZE 200
 
 //variáveis globais
@@ -13,9 +15,30 @@ void pesquisa();
 void lista();
 
 int main (void){
-    cadastro();
-    //pesquisa();
-    lista();
+    do{
+        system("clear");
+        printf("\n-----Menu-----\n1 - Cadastrar\n2 - Listar todos\n3 - Pesquisar\n4 - Sair");
+        scanf("%d", &op);
+        switch (op){
+            case 1:
+                cadastro();
+                break;
+            case 2:
+                lista();
+                break;
+            case 3:
+                pesquisa();
+                break;
+            case 4:
+                system("exit");
+                break;
+            default:
+                printf("Opcao invalida");
+                getchar();
+                getchar();
+                break;
+        }
+    }while (op!=4);
 
 }
 void lista(){
@@ -27,6 +50,7 @@ void lista(){
         }else{
             break;
         }
+        getchar();
 
     }
 }
